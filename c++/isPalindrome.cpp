@@ -6,7 +6,6 @@ class Solution {
 public:
    
    bool isPalindrome(int x) {
-      // take care of reverse overflow
 
       if (x < 0) {
          return false;
