@@ -59,6 +59,8 @@
   "files.associations": {
     "vector": "cpp",
     "iostream": "cpp",
-    "unordered_map": "cpp"
+    "unordered_map": "cpp",
+    "deque": "cpp",
+    "string": "cpp"
   }
 }
