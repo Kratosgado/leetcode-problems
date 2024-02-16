@@ -61,6 +61,10 @@
     "iostream": "cpp",
     "unordered_map": "cpp",
     "deque": "cpp",
-    "string": "cpp"
+    "string": "cpp",
+    "algorithm": "cpp",
+    "ostream": "cpp",
+    "*.tcc": "cpp",
+    "list": "cpp"
   }
 }
