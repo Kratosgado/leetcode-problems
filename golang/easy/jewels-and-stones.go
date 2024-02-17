@@ -1,17 +1,10 @@
-package main
+package easy
 
 import (
-	"fmt"
 	"strings"
 )
 
-func main() {
-	jewels := "ace"
-	stones := "dadc"
-	fmt.Println(altSolution(jewels, stones))
-}
-
-func numJewelsInStones(jewels string, stones string) int {
+func NumJewelsInStones(jewels string, stones string) int {
 	var builder strings.Builder
 	for _, char := range stones {
 		if !strings.ContainsRune(jewels, char){
@@ -21,7 +14,7 @@ func numJewelsInStones(jewels string, stones string) int {
 	return len(stones) - len(builder.String())
 }
 
-func altSolution(jewels string, stones string) int {
+func AltSolution(jewels string, stones string) int {
 	// create map for the jewels
 	jmap := make(map[rune]int)
 	// store each char/rune as keys
