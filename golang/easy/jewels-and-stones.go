@@ -8,7 +8,7 @@ import (
 func main() {
 	jewels := "ace"
 	stones := "dadc"
-	fmt.Println(numJewelsInStones(jewels, stones))
+	fmt.Println(altSolution(jewels, stones))
 }
 
 func numJewelsInStones(jewels string, stones string) int {
@@ -19,4 +19,22 @@ func numJewelsInStones(jewels string, stones string) int {
 		}
 	}
 	return len(stones) - len(builder.String())
+}
+
+func altSolution(jewels string, stones string) int {
+	// create map for the jewels
+	jmap := make(map[rune]int)
+	// store each char/rune as keys
+	for _, char := range jewels {
+		jmap[char] += 1;
+	}
+	ans := 0
+	// loop through the stones
+	for _, char := range stones {
+		// check if char is in jewels
+		if numOfJewels, ok := jmap[char]; ok {
+			ans +=  numOfJewels; // increase
+		}
+	}
+	return ans
 }
