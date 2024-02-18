@@ -7,19 +7,21 @@ using namespace std;
 class Solution {
 public:
    int numJewelsInStones(string jewels, string stones) {
-      int initialSize = stones.size();
-      for (char c : jewels) {
-          stones.erase(remove(stones.begin(), stones.end(), c), stones.end());
-       }
-         return initialSize - stones.size();
-    }
+      int count = 0;
+      for (char c : stones) {
+         if (jewels.find(c) != string::npos) {
+            count++;
+         }
+      }
+      return count;
+   }
 };
 
 int main() {
-      Solution s;
-      string jewels = "aA";
-      string stones = "aAAbbbb";
-      cout << s.numJewelsInStones(jewels, stones) << endl;
-      return 0;
+   Solution s;
+   string jewels = "aA";
+   string stones = "aAAbbbb";
+   cout << s.numJewelsInStones(jewels, stones) << endl;
+   return 0;
 }
 

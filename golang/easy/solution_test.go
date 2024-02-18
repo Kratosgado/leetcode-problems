@@ -10,7 +10,8 @@ func TestJewelsAndStones(t *testing.T) {
 	jewels := "aA"
 	stones := "aAAbbbb"
 	expected := 3
-	result := NumJewelsInStones(jewels, stones)
+	result := CountAlternative(jewels, stones)
+	t.Log(result)
 	if result != expected {
 		t.Errorf("Expected %d but got %d", expected, result)
 	}

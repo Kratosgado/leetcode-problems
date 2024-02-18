@@ -7,11 +7,21 @@ import (
 func NumJewelsInStones(jewels string, stones string) int {
 	var builder strings.Builder
 	for _, char := range stones {
-		if !strings.ContainsRune(jewels, char){
+		if !strings.ContainsRune(jewels, char) {
 			builder.WriteRune(char)
 		}
 	}
 	return len(stones) - len(builder.String())
+}
+
+func CountAlternative(jewels string, stones string) int {
+	count := 0
+	for _, char := range stones {
+		if strings.ContainsRune(jewels, char) {
+			count++
+		}
+	}
+	return count
 }
 
 func AltSolution(jewels string, stones string) int {
@@ -19,14 +29,14 @@ func AltSolution(jewels string, stones string) int {
 	jmap := make(map[rune]int)
 	// store each char/rune as keys
 	for _, char := range jewels {
-		jmap[char] += 1;
+		jmap[char] += 1
 	}
 	ans := 0
 	// loop through the stones
 	for _, char := range stones {
 		// check if char is in jewels
 		if numOfJewels, ok := jmap[char]; ok {
-			ans +=  numOfJewels; // increase
+			ans += numOfJewels // increase
 		}
 	}
 	return ans
